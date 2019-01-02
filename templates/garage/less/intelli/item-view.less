@@ -1,0 +1,412 @@
+
+//
+// Item view page
+// --------------------------------------------------
+
+.ia-item--view {
+
+  .ia-item__image,
+  .ia-item__content {
+    padding: 0;
+  }
+
+  + .tabbable {
+    margin-top: @gap;
+  }
+}
+
+
+
+//
+// View pages for items: packages and etc.
+// --------------------------------------------------
+
+.ia-item-view {
+  .clearfix();
+
+  &__price {
+    color: @brand-info;
+    font-weight: bold;
+    text-align: right;
+    .font-normalize(24px, 0 0 @gap);
+
+    @media (max-width: @screen-md) {
+      text-align: left;
+    }
+
+    &__average_price {
+      font-size: 12px;
+      font-weight: normal;
+      color: fade(@text-color, 80%);
+    }
+  }
+
+  &__title {
+    color: @brand-dark;
+    font-weight: bold;
+    .font-normalize(24px, 0 0 @gap);
+  }
+
+  &__sub-header {
+    font-size: 16px;
+    margin: 0 0 @gap;
+    line-height: @line-height-base;
+  }
+
+  &__info {
+
+    &__item {
+      color: fade(@text-color, 70%);
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: @gap;
+    }
+  }
+
+  &__gallery {
+    margin-bottom: 15px;
+  }
+
+  &__section {
+    margin-bottom: @vertical-rhythm;
+    color: fade(@text-color, 60%);
+    font-size: 16px;
+
+    > h3 {
+      .font-normalize(16px, 0 0 @gap);
+      color: @brand-dark;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__table {
+    position: relative;
+
+    table {
+      width: 100%;
+      color: fade(@brand-dark, 60%);
+
+      td {
+        vertical-align: top;
+
+        &:last-child {
+          width: 40%;
+          font-weight: bold;
+
+          @media (max-width: @screen-md) {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &__features {
+    .clearfix();
+
+    .row [class*="col-md"] + [class*="col-md"] {
+      margin-top: 0;
+    }
+
+    &__item {
+      margin-bottom: @gap/2;
+      color: fade(@brand-dark, 80%);
+      line-height: 16px;
+
+      .fa {
+        margin-right: 3px;
+        font-size: 14px;
+        line-height: 16px;
+        color: @brand-primary;
+      }
+    }
+  }
+
+  &--main-info {
+    padding: 20px;
+    border-radius: @border-radius-large;
+    background-color: #fff;
+    box-shadow: 0 0 27px fade(#000, 13%);
+    .clearfix;
+
+    &__footer {
+      .clearfix;
+    }
+  }
+
+  &__get-enquiry-form {
+    position: absolute;
+    padding: 0 40px 0 60px;
+    min-width: 160px;
+    height: 42px;
+    top: 50%;
+    right: -60px;
+    color: #fff;
+    line-height: 42px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 21px;
+    transform: translateY(-50%);
+    background-color: @link-color;
+    
+    @media (max-width: @screen-md) {
+      position: relative;
+      display: block;
+      margin-top: @gap;
+      top: auto;
+      right: auto;
+      transform: none;
+      border-radius: @border-radius-base;
+      .clearfix;
+    }
+
+    &,
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: @link-hover-color;
+    }
+
+    .fa {
+      position: absolute;
+      width: 60px;
+      height: 42px;
+      top: 0;
+      left: 0;
+      font-size: 31px;
+      line-height: 42px;
+    }
+  }
+
+  &__social {
+    margin-top: @gap;
+  }
+
+  &__report {
+    margin-top: @gap;
+    color: @brand-danger;
+    line-height: 30px;
+
+    > a {
+      color: @brand-danger;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: darken(@brand-danger, 15%);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.enquire {
+  margin: -15px -30px;
+  border-radius: 0 0 @border-radius-base @border-radius-base;
+
+  .enquire__header {
+    display: none;
+  }
+}
+
+
+
+//
+// Author block with short info
+// --------------------------------------------------
+
+.ia-item-author {
+  background: #f5f5f5;
+  position: relative;
+  .clearfix;
+
+  &__edit {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__caption {
+    .font-normalize(16px, 0 0 20px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    display: block;
+    text-decoration: none;
+    float: left;
+    margin: 0 @gap @gap 0;
+
+    @media (max-width: @screen-lg) {
+      float: none;
+      margin-right: 0;
+    }
+
+    > img {
+      display: block;
+      max-width: 60px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+
+      @media (max-width: @screen-lg) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__content {
+    padding: @gap;
+
+    > h4 {
+      .font-normalize(18px, 0 0 5px);
+      font-weight: bold;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ia-item__additional {
+
+    p {
+      float: none;
+      margin: 0 0 2px;
+
+      a > {
+        color: @link-color;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+          color: @link-hover-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__social {
+    margin-top: @gap;
+
+    > a {
+      margin-right: @gap;
+      color: fade(@text-color, 50%);
+      font-size: 18px;
+
+      &:hover,
+      &:focus {
+        color: @text-color;
+      }
+
+      strong {
+        margin-right: @gap;
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    height: 180px;
+
+    #gmap {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  + .box {
+    margin-top: @vertical-rhythm;
+  }
+
+  .request-toggle {
+
+    @media (max-width: @screen-md) {
+      display: block;
+      margin: @gap 0;
+    }
+  }
+}
+
+
+
+//
+// Comments
+// --------------------------------------------------
+
+#block_comments_form {
+  margin-bottom: @vertical-rhythm;
+}
+
+#comment-form {
+
+  [name="security_code"] {
+    width: 100% !important;
+  }
+
+  label {
+    color: fade(@text-color, 50%);
+  }
+}
+
+#comments-captcha {
+
+  .fieldset__header {
+    display: none;
+  }
+
+  .fieldset__content {
+    padding: 0;
+  }
+}
+
+.comment {
+
+  &__head {
+
+    img {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+  }
+
+  &__name {
+
+    > a {
+      color: @text-color;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: @text-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__date {
+    font-style: normal !important;
+  }
+
+  &__body {
+    color: fade(@text-color, 70%);
+    line-height: 18px;
+    padding-left: 55px;
+  }
+}

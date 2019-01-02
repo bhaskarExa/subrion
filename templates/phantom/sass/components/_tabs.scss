@@ -1,0 +1,75 @@
+.nav {
+	@extend .clearfix;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		@extend .clearfix;
+		position: relative;
+		display: block;
+		float: left;
+		padding: 0;
+		margin-right: .5em;
+
+		> a {
+			position: relative;
+			display: block;
+			padding: .5em;
+		}
+	}
+}
+
+.nav-tabs {
+	border-bottom: 2px solid _palette(border);
+
+	> li {
+		margin-right: 0;
+
+		> a {
+			padding: 1em 2em;
+			border-bottom: 0;
+		}
+
+		&.active > a,
+		&.active > a:hover,
+		&.active > a:focus {
+			color: _palette(accent1);
+
+			&::after {
+				display: block;
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -3px;
+				height: 4px;
+				background: _palette(accent1);
+			}
+		}
+
+		> span {
+			position: relative;
+			display: block;
+			padding: 1em 2em;
+			border-bottom: 0;
+			color: #ccc;
+		}
+	}
+}
+
+.tab-content {
+	background: _palette(bg-alt);
+
+	> .tab-pane {
+		display: none;
+		padding: _size(element-margin);
+
+		> form {
+			margin-bottom: 0;
+		}
+	}
+	> .active {
+		display: block;
+	}
+}

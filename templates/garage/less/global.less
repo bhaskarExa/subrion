@@ -1,0 +1,485 @@
+
+//
+// Global styles
+// --------------------------------------------------
+
+.font-normalize(@size, @margin: 0) {
+  font-size: @size;
+  line-height: @size;
+  margin: @margin;
+}
+
+* {
+  outline: none !important;
+}
+
+body {
+  background: @body-bg;
+}
+
+a,
+button,
+[type="submit"],
+[class*="col-"] {
+  transition: .2s;
+}
+
+// improvements for cols in mobile version
+@media (max-width: @screen-md) {
+  .row {
+    [class*="col-md"] + [class*="col-md"] {
+      margin-top: 30px;
+    }
+  }
+}
+
+
+
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+.breadcrumbs {
+  background: #f6f6f6;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .breadcrumb {
+    float: left;
+  }
+
+  .action-buttons {
+    float: right;
+    margin-top: 7px;
+    position: relative;
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .breadcrumb {
+      float: none;
+      padding-top: 0;
+    }
+
+    .action-buttons {
+      float: none;
+      margin-top: 0;
+    }
+  }
+}
+
+
+
+//
+// Content
+// --------------------------------------------------
+
+.page-header {
+  margin-top: 0;
+}
+
+.page-description {
+  margin-bottom: @vertical-rhythm;
+}
+
+.verytop,
+.landing,
+.verybottom {
+
+  .box {
+    padding: @vertical-rhythm*3 0;
+
+    &__caption {
+      .font-normalize(20px, 0);
+    }
+
+    &__content {
+      padding-top: 30px;
+    }
+
+    &__actions {
+      margin-top: @vertical-rhythm*2;
+      text-align: center;
+
+      .btn {
+        width: 140px;
+        margin: 0 5px;
+
+        @media(max-width: @screen-phone) {
+          width: 100%;
+          margin-bottom: @gap;
+        }
+      }
+
+      @media(max-width: @grid-float-breakpoint) {
+        margin-top: @vertical-rhythm;
+      }
+    }
+  }
+}
+
+.landing-tabs {
+  padding: @vertical-rhythm*3 0;
+
+  &__tabs {
+    margin-bottom: @vertical-rhythm*2;
+    border-bottom: 1px solid @border-color;
+
+    @media(max-width: @grid-float-breakpoint) {
+      margin-bottom: @vertical-rhythm;
+      border-bottom: 0;
+    }
+
+    ul {
+      position: relative;
+      top: 2px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+
+      @media(max-width: @grid-float-breakpoint) {
+        position: static;
+        top: 0;
+        text-align: left;
+      }
+
+      > li {
+        display: inline-block;
+        margin: 0 @gap;
+        border-bottom: 3px solid transparent;
+
+        @media(max-width: @grid-float-breakpoint) {
+          display: block;
+          margin: @gap 0;
+        }
+
+        &.active,
+        &:hover {
+          border-color: @brand-primary;
+
+          > a {
+            color: @text-color;
+          }
+        }
+
+        > a {
+          display: block;
+          padding: 25px 0;
+          color: fade(@text-color, 50%);
+          .font-normalize(20px, 0);
+          font-weight: bold;
+          text-transform: uppercase;
+
+          @media(max-width: @grid-float-breakpoint) {
+            padding: 5px 0;
+          }
+
+          &,
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__actions {
+    margin-top: @vertical-rhythm*2;
+    text-align: center;
+
+    .btn {
+      width: 140px;
+      margin: 0 5px;
+
+      @media(max-width: @screen-phone) {
+        width: 100%;
+        margin-bottom: @gap;
+      }
+    }
+
+    @media(max-width: @grid-float-breakpoint) {
+      margin-top: @vertical-rhythm;
+    }
+  }
+}
+
+.verybottom {
+  background-color: #f5f5f5;
+}
+
+.content {
+  padding: @vertical-rhythm*2 0;
+  background: #fff;
+
+  &--offset {
+    padding-top: 0;
+  }
+
+  &__header {
+    .clearfix();
+    // border-bottom: 1px solid #ddd;
+    margin-bottom: @vertical-rhythm/2;
+    padding-bottom: @vertical-rhythm/2;
+    border-bottom: 1px solid @border-color;
+
+    h1 {
+      .font-normalize(26px, 0);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      float: none;
+    }
+  }
+
+  &__actions {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    > li {
+      float: left;
+
+      > a {
+        display: inline-block;
+        line-height: 28px;
+        margin-left: @vertical-rhythm/2;
+        color: fade(@text-color, 50%);
+
+        &:hover {
+          color: fade(@text-color, 70%);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: @vertical-rhythm 0;
+  }
+}
+
+.highlight {
+  background: #fde35b;
+}
+
+
+
+//
+// List actions
+// --------------------------------------------------
+
+.ia-card__actions,
+.ia-item__actions {
+  > a {
+    display: none;
+  }
+}
+
+.ia-card__action,
+.ia-item__action {
+  position: absolute;
+  display: block !important;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  color: #fff !important;
+  margin-right: 30px;
+  background-color: fade(@headings-color, 50%);
+  z-index: 1;
+
+  @media (max-width: @screen-md) {
+    top: 25px;
+    right: auto;
+    left: 25px;
+    margin-right: 0;
+    margin-left: 30px;
+  }
+
+  @media (max-width: @screen-xs) {
+    top: 15px;
+    left: 15px;
+  }
+
+  &:first-child {
+    margin-right: 0;
+
+    @media (max-width: @screen-md) {
+      margin-left: 0;
+    }
+  }
+
+  &,
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &--favorite {
+
+    &.btn-favorite--added {
+      background-color: @brand-accent;
+    }
+  }
+
+  &--compare {
+
+    &.btn-compare--added {
+      background-color: @brand-primary;
+    }
+  }
+
+  i {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+
+
+//
+// Navs
+// --------------------------------------------------
+
+.ia-compare {
+
+  &__table {
+
+     &__title {
+       min-height: 40px;
+     }
+  }
+}
+
+
+
+//
+// Navs
+// --------------------------------------------------
+
+.nav-inline {
+
+  > li {
+    float: left;
+
+    > a {
+      padding: 0;
+      margin: 0 15px 0 0;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}
+
+
+
+//
+// Range Slider
+// --------------------------------------------------
+
+.irs {
+  height: 34px;
+
+  .irs-line,
+  .irs-bar,
+  .irs-slider {
+    position: absolute;
+    top: 50%;
+    margin-top: 4px;
+    .translate(0, -50%);
+  }
+
+  .irs-line,
+  .irs-bar {
+    height: 4px;
+    left: 0;
+    border-radius: @border-radius-small;
+  }
+
+  .irs-line {
+    width: 100%;
+    background-color: @border-color;
+  }
+
+  .irs-bar {
+    background-color: @brand-primary;
+  }
+
+  .irs-min,
+  .irs-max,
+  .irs-from,
+  .irs-to,
+  .irs-single {
+    margin-top: -2px;
+    font-size: 11px;
+  }
+
+  .irs-slider {
+    width: 20px;
+    height: 14px;
+    border: 2px solid @brand-primary;
+    border-radius: 7px;
+    background-color: #fff;
+    cursor: e-resize;
+  }
+}
+
+
+
+//
+// Banner
+// --------------------------------------------------
+
+.separator {
+  margin-top: -43px;
+  margin-bottom: 43px;
+}
+
+
+
+//
+// Banner
+// --------------------------------------------------
+
+.banner {
+  position: relative;
+  max-width: 275px;
+  min-height: 295px;
+  padding: @gap;
+  margin-bottom: 50px;
+  color: fade(#fff, 50%);
+  background: url('../img/banner.jpg') center center no-repeat;
+  background-size: cover;
+  
+  &__content {
+    position: absolute;
+    width: calc(~"100% - 30px");
+    bottom: -17px;
+  }
+
+  &__title {
+    margin-bottom: @gap;
+    color: @brand-accent;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__body {
+    margin-bottom: @gap*2;
+    line-height: 16px;
+  }
+}

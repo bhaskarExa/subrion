@@ -1,0 +1,167 @@
+
+//
+// Footer
+// --------------------------------------------------
+
+.footer {
+  background: @footer-bg;
+  padding: @sections-v-pad - 20 0;
+
+  @media (max-width: @screen-sm) {
+    padding-top: @sections-v-pad/2;
+    padding-bottom: @sections-v-pad/2;
+  }
+
+  &__logo {
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+
+    @media (max-width: @screen-sm) {
+      text-align: left;
+    }
+
+    a {
+
+      &,
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .nav-footer,
+  .box {
+    margin-bottom: 50px;
+  }
+
+  .nav-footer-caption,
+  .box__caption {
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .box__content {
+    padding-top: 0;
+    color: fade(#fff, 70%);
+    font-size: 16px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  a,
+  .ia-item a {
+    color: @footer-link-color;
+
+    &:hover,
+    &:focus {
+      color: @footer-link-hover-color;
+    }
+  }
+
+  .ia-item {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 12px;
+
+    img {
+      border-radius: 0;
+    }
+  }
+
+  ul {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    .clearfix();
+
+    > li {
+
+      > a {
+        display: inline-block;
+        line-height: 30px;
+        font-size: 16px;
+
+        &,
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+
+      &.active > a,
+      &.active > a:focus,
+      &.active > a:hover {
+        color: @footer-link-active-color;
+      }
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    .row {
+      [class*="col-md"] + [class*="col-md"] {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+
+
+//
+// Footer social nav
+// --------------------------------------------------
+
+.nav-footer-social {
+  .clearfix();
+
+  > li {
+    float: left;
+    margin: 0;
+
+    > a {
+      padding-right: 15px;
+      color: @footer-social-link-color;
+    }
+  }
+}
+
+
+
+//
+// Footer text
+// --------------------------------------------------
+
+.copyright {
+  margin: 0;
+  color: fade(#fff, 10%);
+  text-align: center;
+
+  @media (max-width: @screen-sm) {
+    text-align: left;
+  }
+
+  a {
+    color: fade(#fff, 10%);
+
+    &,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: fade(#fff, 20%);
+    }
+  }
+}

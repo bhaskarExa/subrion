@@ -1,0 +1,1 @@
+a:1:{s:3:"USD";a:10:{s:4:"code";s:3:"USD";s:6:"status";s:6:"active";s:5:"title";s:9:"US Dollar";s:4:"rate";d:1;s:6:"symbol";s:1:"$";s:7:"sym_pos";s:3:"pre";s:7:"default";b:1;s:16:"fmt_num_decimals";s:1:"2";s:13:"fmt_dec_point";s:1:".";s:16:"fmt_thousand_sep";s:1:",";}}

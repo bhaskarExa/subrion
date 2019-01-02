@@ -1,0 +1,72 @@
+
+//
+// Crutches
+// --------------------------------------------------
+
+.js-iad + .js-iad {
+  .form-control();
+  margin-top: 15px;
+}
+
+
+
+//
+// Cursor pointer for some elems
+// --------------------------------------------------
+
+.js-datepicker-toggle {
+  cursor: pointer;
+}
+
+
+
+//
+// Cursor pointer for some elems
+// --------------------------------------------------
+
+.field-captcha {
+  img {
+    margin-bottom: @gap;
+  }
+
+  input {
+    margin-top: @gap;
+    .form-control();
+  }
+}
+
+
+
+//
+// Select2
+// --------------------------------------------------
+
+.select2-container--default .select2-selection--multiple,
+.select2-dropdown {
+  border-color: @border-color !important;
+
+  &:hover,
+  &:focus {
+    border-color: darken(@border-color, 10%) !important;
+  }
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  border: 0 !important;
+  color: #fff !important;
+  border-radius: @border-radius-base !important;
+  background-color: @brand-dark !important;
+
+  &__remove {
+
+    &,
+    &:hover,
+    &:focus {
+      color: fade(#fff, 40%) !important;
+    }
+  }
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: @brand-dark !important;
+}

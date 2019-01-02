@@ -1,0 +1,108 @@
+
+//
+// Landing page
+// --------------------------------------------------
+
+.landing {
+
+  .box+.box,
+  .box+div {
+    margin: 0;
+  }
+}
+
+
+
+//
+// Sections
+// --------------------------------------------------
+
+.section {
+  padding: @sections-v-pad 0;
+  background: #fff;
+
+  > .container > .box {
+    margin: 0;
+
+    &__caption {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: @sections-v-pad/2;
+
+      &::after {
+        display: block;
+        content: '';
+        width: 100px;
+        height: 2px;
+        background: fade(#000, 10%);
+        position: absolute;
+        left: 50%;
+        bottom: -30px;
+        margin-left: -50px;
+      }
+    }
+
+    &__content {
+      padding: 0;
+    }
+  }
+}
+
+
+
+//
+// Section: blog
+// --------------------------------------------------
+
+.section-blog {
+  background: #f2f2f2;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.blogroll {
+
+  .row + .row {
+    margin-top: @sections-v-pad;
+  }
+}
+
+.blog-item {
+
+  &__date {
+    font-weight: bold;
+    color: fade(@text-color, 50%);
+  }
+
+  &__title {
+    margin: 10px 0 20px;
+    font-weight: bold;
+
+    a {
+      &,
+      &:focus {
+        color: @text-color;
+      }
+
+      &:hover {
+        color: @link-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__intro {
+    color: fade(@text-color, 50%);
+  }
+
+  &__author {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    color: fade(@text-color, 70%);
+  }
+}
